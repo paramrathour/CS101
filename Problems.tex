@@ -24,6 +24,7 @@
 \geometry{
 	margin = 1in
 }
+\usepackage{verbatimbox}
 \usepackage{float}
 \usepackage{wrapfig}
 \usepackage{tikz}
@@ -40,7 +41,7 @@
 }
 \renewcommand{\d}{\mathrm{d}}
 \title{CS 101 Computer Programming and Utilization\\[0.5em]\Large{Practice Problems}}
-\author{Param Rathour\\\url{https://paramrathour.github.io/CS-101/Problems.pdf}}
+\author{Param Rathour\\\url{https://paramrathour.github.io/CS101}}
 \date{Autumn Semester 2020-21\\~\\Last update: \DTMnow}
 
 \begin{document}
@@ -123,10 +124,10 @@ This sequence has period 8, so $\pi(3) = 8$.
 
 \textbf{Problem Statement:}
 \begin{enumerate}[label=(\alph*)]
-\item Find Pisano period of $n$ numbers $k_1\ k_2\ \ldots \ k_n$\\
+\item Find Pisano period of $n$ numbers $k_1,k_2,\ldots,k_n$\\
 \textbf{Input Format}\\
 $n$\\
-$k_1\ k_2\ \ldots \ k_n$\\
+$k_1,k_2,\ldots,k_n$\\
 \textbf{Output Format}\\
 $\pi(k_i)$ (each on a newline)\\
 \textbf{Sample Input}\\
@@ -136,20 +137,21 @@ $\pi(k_i)$ (each on a newline)\\
 8\\
 60\\
 100
-\item For $n$ numbers $k_1\ k_2\ \ldots \ k_n$, find $\max(\pi(i))$ for $i = 1,2,\ldots,k_i$ and corresponding $i$\\
+\item For $n$ numbers $k_1,k_2,\ldots,k_n$, find $\max(\pi(i))$ for $i = 1,2,\ldots,k$ and corresponding $i$\\
 If there are 2 (or more) such $i$'s, output smallest of them\\
 \textbf{Input Format}\\
 $n$\\
-$k_1\ k_2\ \ldots \ k_n$\\
+$k_1,k_2,\ldots,k_n$\\
 \textbf{Output Format}\\
 $k$ $\pi(k)$ (each pair on a newline)\\
-Here $k$ is smallest possible integer satisfying $\pi(k) = \max(\pi(i))$ for $i = 1,2,\ldots,k_i$ \\
+Here $k$ is smallest possible integer satisfying $\pi(k) = \max(\pi(i))$ for possible $i$ \\
 \textbf{Sample Input}\\
-4\\
-20 40 60 100\\
+5\\
+20 40 60 80 100\\
 \textbf{Sample Output}\\
 10 60\\
 30 120\\
+50 300\\
 50 300\\
 98 336
 \end{enumerate}
@@ -159,18 +161,16 @@ Here $k$ is smallest possible integer satisfying $\pi(k) = \max(\pi(i))$ for $i 
 	\frac{\pi}{2} = \sum_{k=0}^{\infty}\frac{2^k k!^2}{(2k+1)!}
 \end{equation}
 \textbf{Problem Statement:}\\
-Calculate $\pi$ till $k_i$\textsuperscript{th} iteration using Equation (\ref{eq:epi}) for $n$ different natural numbers $k_1\ k_2\ \ldots \ k_n$.\\
-Give your answers correct to 10 decimal places
+Calculate $\pi$ till $k_i$\textsuperscript{th} iteration using Equation (\ref{eq:epi}) for $n$ different natural numbers $k_1,k_2,\ldots,k_n$.\\
+Give your answers correct to 10 decimal places\\
 \textbf{Input Format}\\
 $n$\\
-$k_1\ k_2\ \ldots \ k_n$\\
+$k_1,k_2,\ldots,k_n$\\
 \textbf{Output Format}\\
 Calculated $\pi$ for $k_i$ (each on a newline)\\
 \textbf{Sample Input}\\
 3\\
-10\\
-20\\
-30\\
+10, 20, 30\\
 \textbf{Sample Output}\\
 3.1411060216\\
 3.1415922987\\

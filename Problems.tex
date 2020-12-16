@@ -40,6 +40,33 @@
 	pdfauthor = {Param Rathour, Department of Electrical Engineering, Indian Institute of Technology Bombay},,
 }
 \renewcommand{\d}{\mathrm{d}}
+\newenvironment{testcases}[4]{
+	\vspace{0.2em}
+	\fbox{
+	\begin{minipage}{\linewidth}
+	\textbf{Input Format}\\
+	#1\\
+	\textbf{Output Format}\\
+	#2\\
+	\textbf{Sample Input}\\
+	#3\\
+	\textbf{Sample Output}\\
+	#4
+	\end{minipage}
+	}}
+    {
+    \vspace{0em}
+	}
+\newenvironment{correctanswer}[1]{
+	\vspace{0.2em}
+	\fbox{
+	\begin{minipage}{\linewidth}
+	\textbf{Correct Answer} = #1
+	\end{minipage}
+	}}
+    {
+    \vspace{0em}
+	}
 \title{CS 101 Computer Programming and Utilization\\[0.5em]\Large{Practice Problems}}
 \author{Param Rathour\\\url{https://paramrathour.github.io/CS101}}
 \date{Autumn Semester 2020-21\\~\\Last update: \DTMnow}
@@ -124,36 +151,21 @@ This sequence has period 8, so $\pi(3) = 8$.
 
 \textbf{Problem Statement:}
 \begin{enumerate}[label=(\alph*)]
-\item Find Pisano period of $n$ numbers $k_1,k_2,\ldots,k_n$\\
-\textbf{Input Format}\\
-$n$\\
-$k_1,k_2,\ldots,k_n$\\
-\textbf{Output Format}\\
-$\pi(k_i)$ (each on a newline)\\
-\textbf{Sample Input}\\
-3\\
-3 10 25\\
-\textbf{Sample Output}\\
-8\\
-60\\
-100
-\item For $n$ numbers $k_1,k_2,\ldots,k_n$, find $\max(\pi(i))$ for $i = 1,2,\ldots,k$ and corresponding $i$\\
-If there are 2 (or more) such $i$'s, output smallest of them\\
-\textbf{Input Format}\\
-$n$\\
-$k_1,k_2,\ldots,k_n$\\
-\textbf{Output Format}\\
-$k$ $\pi(k)$ (each pair on a newline)\\
-Here $k$ is smallest possible integer satisfying $\pi(k) = \max(\pi(i))$ for possible $i$ \\
-\textbf{Sample Input}\\
-5\\
-20 40 60 80 100\\
-\textbf{Sample Output}\\
-10 60\\
-30 120\\
-50 300\\
-50 300\\
-98 336
+	\item Find Pisano period of $n$ numbers $k_1,k_2,\ldots,k_n$\\
+	\begin{testcases}
+		{$n$\\$k_1,k_2,\ldots,k_n$}
+		{$\pi(k_i)$ (each on a newline)}
+		{3\\3 10 25}
+		{8\\60\\100}
+	\end{testcases}
+	\item For $n$ numbers $k_1,k_2,\ldots,k_n$, find $\max(\pi(i))$ for $i = 1,2,\ldots,k$ and corresponding $i$\\
+	If there are 2 (or more) such $i$'s, output smallest of them\\
+	\begin{testcases}
+		{$n$\\$k_1,k_2,\ldots,k_n$}
+		{$k$ $\pi(k)$ (each pair on a newline)\\Here $k$ is smallest possible integer satisfying $\pi(k) = \max(\pi(i))$ for possible $i$ }
+		{5\\20 40 60 80 100}
+		{10 60\\30 120\\50 300\\50 300\\98 336}
+	\end{testcases}
 \end{enumerate}
 \clearpage
 \item
@@ -163,18 +175,12 @@ Here $k$ is smallest possible integer satisfying $\pi(k) = \max(\pi(i))$ for pos
 \textbf{Problem Statement:}\\
 Calculate $\pi$ till $k_i$\textsuperscript{th} iteration using Equation (\ref{eq:epi}) for $n$ different natural numbers $k_1,k_2,\ldots,k_n$.\\
 Give your answers correct to 10 decimal places\\
-\textbf{Input Format}\\
-$n$\\
-$k_1,k_2,\ldots,k_n$\\
-\textbf{Output Format}\\
-Calculated $\pi$ for $k_i$ (each on a newline)\\
-\textbf{Sample Input}\\
-3\\
-10, 20, 30\\
-\textbf{Sample Output}\\
-3.1411060216\\
-3.1415922987\\
-3.1415926533\\
+\begin{testcases}
+	{$n$\\$k_1,k_2,\ldots,k_n$}
+	{Calculated $\pi$ for $k_i$ (each on a newline)}
+	{3\\10, 20, 30}
+	{3.1411060216\\3.1415922987\\3.1415926533}
+\end{testcases}
 \item \textbf{Simpson's Rule}: a method for numerical integration
 \begin{equation}
 	\displaystyle \int _{a}^{b}f(x)\,dx\approx {\frac {\Delta x}{3}}\left(f(x_{0})+4f(x_{1})+2f(x_{2})+4f(x_{3})+2f(x_{4})+\cdots +4f(x_{n-1})+f(x_{n})\right)
@@ -187,6 +193,8 @@ Solve Equation (\ref{eq:simp}) giving the answers correct to 7 decimal places (U
 \begin{equation}{\label{eq:simp}}
 	\int_{0.5}^{1}\frac{\sin\theta}{\theta}\d x
 \end{equation}
-\textbf{Correct Answer} = 0.4529756
+\begin{correctanswer}
+	{0.4529756}
+\end{correctanswer}
 \end{enumerate}
 \end{document}

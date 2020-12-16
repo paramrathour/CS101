@@ -12,6 +12,7 @@
 \theoremstyle{remark}
 \newtheorem*{sol}{Solution}
 
+\usepackage{datetime2}
 \usepackage{relsize}
 \usepackage{url}
 \usepackage{graphicx}
@@ -30,14 +31,28 @@
 \usepackage[parfill]{parskip}
 \setlength{\parindent}{0em}
 \usepackage{comment}
-\usepackage{hyperref}
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{
+	linktoc= all,     %set to all if you want both sections and subsections linked
+	urlcolor= cyan,
+	%linkcolor= magenta,
+	pdfauthor = {Param Rathour, Department of Electrical Engineering, Indian Institute of Technology Bombay},,
+}
 \renewcommand{\d}{\mathrm{d}}
-\title{Practice Problems\\[0.5em]\Large{CS 101 Autumn 2020}}
-\author{Param Rathour}
-\date{\today}
+\title{CS 101 Computer Programming and Utilization\\[0.5em]\Large{Practice Problems}}
+\author{Param Rathour\\\url{https://paramrathour.github.io/CS-101/Problems.pdf}}
+\date{Autumn Semester 2020-21\\~\\Last update: \DTMnow}
 
 \begin{document}
 \maketitle
+
+\begin{center}
+	\textbf{\Large{Disclaimer}}
+\end{center}
+These are \textbf{optional} problems.
+As these problems are pretty involving, my advice to you would be to first solve exercises given in slides and get comfortable with the course content.
+The taught methods will suffice to solve these problems. (You are free to use `other' stuff but not recommended)
+
 \tableofcontents
 \clearpage
 
@@ -113,7 +128,7 @@ This sequence has period 8, so $\pi(3) = 8$.
 $n$\\
 $k_1\ k_2\ \ldots \ k_n$\\
 \textbf{Output Format}\\
-$(\pi(k_i))$ (each on a newline)\\
+$\pi(k_i)$ (each on a newline)\\
 \textbf{Sample Input}\\
 3\\
 3 10 25\\
@@ -121,13 +136,14 @@ $(\pi(k_i))$ (each on a newline)\\
 8\\
 60\\
 100
-\item For $n$ numbers $k_1\ k_2\ \ldots \ k_n$, find $\max(\pi(i))$ for $i = 1,2,\ldots,k_1$ and corresponding $i$\\
+\item For $n$ numbers $k_1\ k_2\ \ldots \ k_n$, find $\max(\pi(i))$ for $i = 1,2,\ldots,k_i$ and corresponding $i$\\
 If there are 2 (or more) such $i$'s, output smallest of them\\
 \textbf{Input Format}\\
 $n$\\
 $k_1\ k_2\ \ldots \ k_n$\\
 \textbf{Output Format}\\
 $k$ $\pi(k)$ (each pair on a newline)\\
+Here $k$ is smallest possible integer satisfying $\pi(k) = \max(\pi(i))$ for $i = 1,2,\ldots,k_i$ \\
 \textbf{Sample Input}\\
 4\\
 20 40 60 100\\
@@ -137,13 +153,29 @@ $k$ $\pi(k)$ (each pair on a newline)\\
 50 300\\
 98 336
 \end{enumerate}
+\clearpage
 \item
 \begin{equation}{\label{eq:epi}}
 	\frac{\pi}{2} = \sum_{k=0}^{\infty}\frac{2^k k!^2}{(2k+1)!}
 \end{equation}
 \textbf{Problem Statement:}\\
-Take a natural number $k$ as input and calculate $\pi$ till $k$\textsuperscript{th} iteration using Equation (\ref{eq:epi})
-\item \textbf{Simpson's Rule} a method for numerical integration
+Calculate $\pi$ till $k_i$\textsuperscript{th} iteration using Equation (\ref{eq:epi}) for $n$ different natural numbers $k_1\ k_2\ \ldots \ k_n$.\\
+Give your answers correct to 10 decimal places
+\textbf{Input Format}\\
+$n$\\
+$k_1\ k_2\ \ldots \ k_n$\\
+\textbf{Output Format}\\
+Calculated $\pi$ for $k_i$ (each on a newline)\\
+\textbf{Sample Input}\\
+3\\
+10\\
+20\\
+30\\
+\textbf{Sample Output}\\
+3.1411060216\\
+3.1415922987\\
+3.1415926533\\
+\item \textbf{Simpson's Rule}: a method for numerical integration
 \begin{equation}
 	\displaystyle \int _{a}^{b}f(x)\,dx\approx {\frac {\Delta x}{3}}\left(f(x_{0})+4f(x_{1})+2f(x_{2})+4f(x_{3})+2f(x_{4})+\cdots +4f(x_{n-1})+f(x_{n})\right)
 \end{equation}
@@ -155,6 +187,6 @@ Solve Equation (\ref{eq:simp}) giving the answers correct to 5 decimal places (U
 \begin{equation}{\label{eq:simp}}
 	\int_{0.5}^{1}\frac{\sin\theta}{\theta}\d x
 \end{equation}
-%0.452975
+\textbf{Correct Answer} = 0.452975
 \end{enumerate}
 \end{document}

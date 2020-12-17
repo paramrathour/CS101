@@ -43,8 +43,11 @@ This sequence has period 8, so $\pi(3) = 8$.
 \clearpage
 \item
 \begin{equation}{\label{eq:epi}}
-	\frac{\pi}{2} = \sum_{k=0}^{\infty}\frac{2^k k!^2}{(2k+1)!}
+	\frac{\pi}{2} = \sum_{k=0}^{\infty}\frac{k!}{(2k+1)!!} = \sum_{k=0}^{\infty}\frac{2^k k!^2}{(2k+1)!}
 \end{equation}
+\begin{note}
+$n!!$ is called \href{https://en.wikipedia.org/wiki/Double_factorial}{double factorial}. $n!! \neq (n!)!$.
+\end{note}
 \textbf{Problem Statement:}\\
 Calculate $\pi$ till $k_i$\textsuperscript{th} iteration using Equation (\ref{eq:epi}) for $n$ different natural numbers $k_1,k_2,\ldots,k_n$.\\
 Give your answers correct to 10 decimal places\\

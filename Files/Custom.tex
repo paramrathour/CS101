@@ -1,0 +1,32 @@
+\renewcommand{\d}{\mathrm{d}}
+
+\newenvironment{testcases}[4]{
+	\vspace{0.2em}
+	\fbox{
+	\begin{minipage}{\linewidth}
+	\textbf{Input Format}\\
+	#1\\
+	\textbf{Output Format}\\
+	#2\\
+	\textbf{Sample Input}\\
+	#3\\
+	\textbf{Sample Output}\\
+	#4
+	\end{minipage}
+	}
+	}
+    {
+    \vspace{0em}
+}
+
+\newenvironment{correctanswer}[1]{
+	\vspace{0.2em}
+	\fbox{
+	\begin{minipage}{\linewidth}
+	\textbf{Correct Answer} = #1
+	\end{minipage}
+	}
+	}
+    {
+    \vspace{0em}
+}

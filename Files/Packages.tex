@@ -1,0 +1,42 @@
+\usepackage[utf8]{inputenc}
+\renewcommand\familydefault{\sfdefault}
+
+\usepackage{geometry}
+\geometry{
+	margin = 1in
+}
+
+\usepackage{titlesec}
+\titleformat{\section}[block]{\sffamily\Large\filcenter\bfseries}{\S\thesection.}{0.25cm}{\Large}
+\titleformat{\subsection}[block]{\large\bfseries\sffamily}{\S\S\thesubsection.}{0.2cm}{\large}
+\usepackage[parfill]{parskip}
+\setlength{\parindent}{0em}
+\usepackage{enumitem}
+
+\usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools}
+\newtheorem*{note}{Note}
+\newtheorem*{hint}{Hint}
+\theoremstyle{remark}
+\newtheorem*{sol}{Solution}
+
+\usepackage{tikz}
+%\usetikzlibrary{quotes}
+\usepackage{graphicx}
+\graphicspath{ {./Images/}}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{float}
+
+\usepackage{datetime2}
+\usepackage{relsize}
+\usepackage{url}
+\usepackage{comment}
+
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{
+	linktoc= all,     %set to all if you want both sections and subsections linked
+	urlcolor= cyan,
+	pdftitle={Practice Problems},
+	pdfauthor = {Param Rathour, Department of Electrical Engineering, Indian Institute of Technology Bombay},
+	pdfsubject={CS 101 Computer Programming and Utilization},
+}

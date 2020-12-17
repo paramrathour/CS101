@@ -1,0 +1,72 @@
+\section{Practice Problems 2}
+\begin{enumerate}
+\item
+You probably heard about Fibonacci Numbers!
+
+The Fibonacci numbers are the numbers in the integer sequence: (defined by the recurrence relation)
+\begin{equation}
+	\begin{aligned}
+		F_0 &= 0\\
+		F_1 &= 1 \\
+		F_n &= F_{n-1} + F_{n-2}\quad n \in \mathbb{Z}\quad\text{(They can be extended to negative numbers)}
+	\end{aligned}
+\end{equation}
+For any integer $n$, the sequence of Fibonacci numbers $F_i$ taken modulo $n$ is periodic.
+
+The Pisano period, denoted $\pi(n)$, is the length of the period of this sequence.
+
+For example, the sequence of Fibonacci numbers modulo 3 begins:
+\begin{equation*}
+	0, 1, 1, 2, 0, 2, 2, 1, 0, 1, 1, 2, 0, 2, 2, 1, 0, 1, 1, 2, 0, 2, 2, 1, 0,\ldots\text{(\href{https://oeis.org/A082115}{A082115})}
+\end{equation*}
+This sequence has period 8, so $\pi(3) = 8$.
+(Basically, the remainder when these numbers are divided by $n$ is a repeating sequence. You have to find the length of sequence)
+
+\textbf{Problem Statement:}
+\begin{enumerate}[label=(\alph*)]
+	\item Find Pisano period of $n$ numbers $k_1,k_2,\ldots,k_n$\\
+	\begin{testcases}
+		{$n$\\$k_1,k_2,\ldots,k_n$}
+		{$\pi(k_i)$ (each on a newline)}
+		{3\\3 10 25}
+		{8\\60\\100}
+	\end{testcases}
+	\item For $n$ numbers $k_1,k_2,\ldots,k_n$, find $\max(\pi(i))$ for $i = 1,2,\ldots,k$ and corresponding $i$\\
+	If there are 2 (or more) such $i$'s, output smallest of them\\
+	\begin{testcases}
+		{$n$\\$k_1,k_2,\ldots,k_n$}
+		{$k$ $\pi(k)$ (each pair on a newline)\\Here $k$ is smallest possible integer satisfying $\pi(k) = \max(\pi(i))$ for possible $i$ }
+		{5\\20 40 60 80 100}
+		{10 60\\30 120\\50 300\\50 300\\98 336}
+	\end{testcases}
+\end{enumerate}
+\clearpage
+\item
+\begin{equation}{\label{eq:epi}}
+	\frac{\pi}{2} = \sum_{k=0}^{\infty}\frac{2^k k!^2}{(2k+1)!}
+\end{equation}
+\textbf{Problem Statement:}\\
+Calculate $\pi$ till $k_i$\textsuperscript{th} iteration using Equation (\ref{eq:epi}) for $n$ different natural numbers $k_1,k_2,\ldots,k_n$.\\
+Give your answers correct to 10 decimal places\\
+\begin{testcases}
+	{$n$\\$k_1,k_2,\ldots,k_n$}
+	{Calculated $\pi$ for $k_i$ (each on a newline)}
+	{3\\10 20 30}
+	{3.1411060216\\3.1415922987\\3.1415926533}
+\end{testcases}
+\item \textbf{Simpson's Rule}: a method for numerical integration
+\begin{equation}
+	\displaystyle \int _{a}^{b}f(x)\,dx\approx {\frac {\Delta x}{3}}\left(f(x_{0})+4f(x_{1})+2f(x_{2})+4f(x_{3})+2f(x_{4})+\cdots +4f(x_{n-1})+f(x_{n})\right)
+\end{equation}
+\begin{note}
+	Simpson’s rule can only be applied when an odd number of ordinates is chosen.
+\end{note}
+\textbf{Problem Statement:}\\
+Solve Equation (\ref{eq:simp}) giving the answers correct to 7 decimal places (Use 101 ordinates)
+\begin{equation}{\label{eq:simp}}
+	\int_{0.5}^{1}\frac{\sin\theta}{\theta}\d x
+\end{equation}
+\begin{correctanswer}
+	{0.4529756}
+\end{correctanswer}
+\end{enumerate}

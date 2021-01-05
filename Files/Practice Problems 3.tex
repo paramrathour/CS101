@@ -4,31 +4,31 @@
 Write a function that calculates the day of the week for any particular date in the past or future.\\
 Consider Gregorian calendar (AD)
 \begin{description}
-\item[Task 1:] As a programming exercise, try the naive approach:\\
-Starting from 1 Jan 0001 (Saturday) and calculate day after day till you reach the given date\\
-Use \href{https://www.geeksforgeeks.org/switch-statement-cc/}{\texttt{switch-case}} statement 
-\item[Task 2:] 
-Try to make more efficent algorithm (reduce completion time) than Task 1\\
-Implement it, and discuss your approach with me.
+	\item[Task 1:] As a programming exercise, try the naive approach:\\
+	Starting from 1 Jan 0001 (Saturday) and calculate day after day till you reach the given date\\
+	Use \href{https://www.geeksforgeeks.org/switch-statement-cc/}{\texttt{switch-case}} statement 
+	\item[Task 2:] 
+	Try to make more efficent algorithm (reduce completion time) than Task 1\\
+	Implement it, and discuss your approach with me.
 \end{description}
 Also check for invalid dates (Write another function for this)\\
 If dates are invalid, output \textbf{-1}\\
 \begin{testcases}
-{$n$\\Followed by $n$ dates in \textbf{Date Month Year} format}
-{Day of the Week}
-{5\\19 2 1627\\29 2 1700\\15 4 1707\\22 12 1887\\23 6 1912}
-{Monday\\-1\\Friday\\Thursday\\Sunday}
+	{$n$\\Followed by $n$ dates in \textbf{Date Month Year} format}
+	{Day of the Week}
+	{5\\19 2 1627\\29 2 1700\\15 4 1707\\22 12 1887\\23 6 1912}
+	{Monday\\-1\\Friday\\Thursday\\Sunday}
 \end{testcases}
 \begin{note}
-Use your Task 1 program to check Task 2 implementation.
+	Use your Task 1 program to check Task 2 implementation.
 \end{note}
 \item \textbf{Farey Sequence}\\
 This sequence has all rational numbers in range $[0/1\ \text{to}\ 1/1]$ sorted \emph{in increasing order} such that the denominators are less than or equal to $n$ and all numbers are in \emph{reduced forms} i.e., 2/4 does not belong to this sequence as it can be reduced to 1/2.\\
 \begin{testcases}
-{$n$}
-{Corresponding numbers in sequence in $p/q$ format}
-{7}
-{0/1 1/7 1/6 1/5 1/4 2/7 1/3 2/5 3/7 1/2 4/7 3/5 2/3 5/7 3/4 4/5 5/6 6/7 1/1}
+	{$n$}
+	{Corresponding numbers in sequence in $p/q$ format}
+	{7}
+	{0/1 1/7 1/6 1/5 1/4 2/7 1/3 2/5 3/7 1/2 4/7 3/5 2/3 5/7 3/4 4/5 5/6 6/7 1/1}
 \end{testcases}
 Can you find efficient solution?
 \subsection*{Fun Video}
@@ -38,19 +38,19 @@ Can you find efficient solution?
 \href{https://oeis.org/A010060}{Thue-Morse Sequence} is the infinite binary sequence obtained by starting with 0 and successively appending the Boolean complement of the sequence obtained thus far (called prefixes of the sequence).\\
 First few steps :
 \begin{itemize}
-\item Start with 0
-\item Append complement of 0, we get 01
-\item Append complement of 01, we get 0110
-\item Append complement of 0110, we get 01101001
+	\item Start with 0
+	\item Append complement of 0, we get 01
+	\item Append complement of 01, we get 0110
+	\item Append complement of 0110, we get 01101001
 \end{itemize}
 \textbf{Problem Statement:}\\
 Consider appending complement of a prefix to itself as one iteration\\
 Define a function to take a positive integer $n$ as input then iterate $n$ times to print the first $2^{n}$ digits\\
 \begin{testcases}
-{$n$}
-{Corresponding digits in sequence}
-{6}
-{0110100110010110100101100110100110010110011010010110100110010110}
+	{$n$}
+	{Corresponding digits in sequence}
+	{6}
+	{0110100110010110100101100110100110010110011010010110100110010110}
 \end{testcases}
 Again, can you find better solution?
 \subsection*{Fun Video}
@@ -58,17 +58,17 @@ Again, can you find better solution?
 \item \textbf{Collatz Conjecture}\\
 Consider the following operation on an arbitrary positive integer:
 \begin{itemize}
-\item If the number is even, divide it by two.
-\item If the number is odd, triple it and add one.
+	\item If the number is even, divide it by two.
+	\item If the number is odd, triple it and add one.
 \end{itemize}
 Collatz Conjecture states that no matter which positive integer we start with; we always end up with 1.
 
 \textbf{Problem Statement:}\\
 Define a function which performs this operation repeatedly on the result at each step; beginning with a given input $n$ ($n<10^6$), returns the number of operations required to reach 1\footnote{As of 2020, the conjecture has been checked by computer for all starting values up to $2^{68} \approx 2.95 \times 10^{20}$, so sequence from $n$ will reach 1}\\
 \begin{testcases}
-{Arbitrary number of testcases (each space separated)\\Stop when input is negative}
-{Count of operations for each number (each on a newline)}
-{1 3 7 9 27 871 77031 -1}
-{0\\7\\16\\19\\111\\178\\350}
+	{Arbitrary number of testcases (each space separated)\\Stop when input is negative}
+	{Count of operations for each number (each on a newline)}
+	{1 3 7 9 27 871 77031 -1}
+	{0\\7\\16\\19\\111\\178\\350}
 \end{testcases}
 \end{enumerate}

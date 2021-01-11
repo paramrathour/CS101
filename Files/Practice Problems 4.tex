@@ -1,0 +1,128 @@
+\section{Practice Problems 4 - Recursion}
+Practice Problem 4 are inspired from the following video do watch till 6:10 to get clear understanding of recursion
+\href{https://youtu.be/ngCos392W4w}{5 Simple Steps for Solving Any Recursive Problem}
+\begin{itemize}
+	\item What's the simplest possible input?
+	\item Play around with examples and visualize!
+	\item Relate hard cases to simpler cases
+	\item Generalize the pattern
+	\item Write code by combining recursive pattern with base case
+\end{itemize}
+\begin{enumerate}
+\item \textbf{Ackermann function}\\
+Write a recursive function $\op{A}()$ that takes two inputs $n$ and $m$ and outputs the number $\op{A}(m,n)$ where $\op{A}(m,n)$  is defined as
+\begin{align}
+	\op{A}(0,n)&=n+1\\
+	\op{A}(m+1,0)&=\op{A}(m,1)\\
+	\op{A}(m+1,n+1)&=\op{A}(m,\op{A}(m+1,n))
+\end{align}
+\textbf{Problem Statement:}\\
+For $k$ pairs $(m_1,n_1),(m_2,n_2),\ldots,(m_k,n_k)$, find $\op{A}(m,n)$ for such $m,n$\\
+\begin{testcases}
+	{$k$\\$m_i\ n_i$ (each pair on a newline)}
+	{$\op{A}(m_i,n_i)$ (each result on a newline)}
+	{7\\0 0\\0 4\\1 3\\2 2\\3 4\\4 0\\4 1}
+	{1\\5\\5\\7\\125\\13\\65533}
+\end{testcases}
+\item \textbf{GridPaths}\\
+Write a recursive function $\op{NumberOfGridPaths}()$ that takes two inputs $n$ and $m$ and outputs the number of unique paths from the top left corner to bottom right corner of a $n \times m$ grid.
+
+Constraints: $n,m\geq1$ and you can only move down or right 1 unit at a time.\\
+Examples given in Figure \ref{fig:gdp}\\
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}{0.55\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{GridPaths.png}
+		\caption{Number of Grid Paths for $m,n\in\{1,2,3\}$}
+		\label{fig:gdp}
+	\end{subfigure}
+	\vline
+	\begin{subfigure}{0.4\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Delannoy3x3.pdf}
+		\caption{DelannoyNumbers(3,3) = 63}
+		\label{fig:dela}
+	\end{subfigure}
+	\caption{}
+\end{figure}
+\textbf{Problem Statement:}\\
+For $k$ pairs $(n_1,m_1),(n_2,m_2),\ldots,(n_k,m_k)$, find $\op{NumberOfGridPaths}(n,m)$ for such $n,m$\\%\verb!NumberOfGridPaths(n,m)! for such \verb!n,m!
+\begin{testcases}
+	{$k$\\$n_i\ m_i$ (each pair on a newline)}
+	{$\op{NumberOfGridPaths}(n_i,m_i)$ (each result on a newline)}
+	{6\\1 1\\2 5\\3 3\\6 3\\7 10\\17 8}
+	{1\\5\\6\\21\\5005\\245157}
+\end{testcases}
+Can you find efficient solution?
+\item \textbf{Delannoy Numbers}\\
+Delannoy numbers describes the number of paths from the southwest corner (0, 0) of a rectangular grid to the northeast corner $(m, n)$, using only single steps north, northeast, or east.\\
+Write a recursive function  $\op{DelannoyNumber}()$ to count number of these paths
+Constraints: $n,m\geq0$\\
+Examples given in Figure \ref{fig:dela}
+
+\textbf{Problem Statement:}\\
+For $k$ pairs $(n_1,m_1),(n_2,m_2),\ldots,(n_k,m_k)$, find $\op{DelannoyNumbers}(n,m)$ for such $n,m$\\
+\begin{testcases}
+	{$k$\\$n_i\ m_i$ (each pair on a newline)}
+	{$\op{DelannoyNumber}(n_i,m_i)$ (each result on a newline)}
+	{6\\1 1\\2 5\\3 3\\6 3\\7 10\\17 8}
+	{3\\61\\63\\377\\433905\\245157\\62390545}
+\end{testcases}
+Can you find efficient solution?
+\item \textbf{Partitions}
+\begin{enumerate}[label=(\alph*)]
+\item 
+Write a recursive function $\op{NumberOfPartitions}()$ that counts the number of ways you can partition $n$ objects using parts up to $m$
+
+Constraints: $n,m>0$\\
+Examples given in Figure \ref{fig:part}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{Partitions.png}
+	\caption{Partition $n$ objects using parts up to $m$}
+	\label{fig:part}
+\end{figure}
+Can you find efficient solution?\\
+\textbf{Problem Statement:}\\
+For $k$ pairs $(n_1,m_1),(n_2,m_2),\ldots,(n_k,m_k)$, find $\op{NumberOfPartitions}(n,m)$ for such $n,m$\\
+\begin{testcases}
+	{$k$\\$n_i\ m_i$ (each pair on a newline)}
+	{$\op{NumberOfPartitions}(n_i,m_i)$ (each result on a newline)}
+	{7\\1 1\\2 5\\3 3\\6 3\\7 10\\17 8\\20 12}
+	{1\\2\\3\\7\\15\\230\\582}
+\end{testcases}
+\item Number of partitions $\op{P}(n)$ of an integer $n$ is same as $\op{NumberOfPartitions}(n,n)$
+\begin{thm}[Pentagonal Number Theorem]
+	This theorem relates the product and series representations of the \href{https://en.wikipedia.org/wiki/Euler_function}{Euler function}
+	\begin{equation}
+		\prod_{n=1}^{\infty}\left(1-x^{n}\right)=\sum_{k=-\infty }^{\infty }\left(-1\right)^{k}x^{k\left(3k-1\right)/2}=1+\sum _{k=1}^{\infty }(-1)^{k}\left(x^{k(3k+1)/2}+x^{k(3k-1)/2}\right)
+	\end{equation}
+	In other words,
+	\begin{equation}{\label{eqn:pnts}}
+		(1-x)(1-x^{2})(1-x^{3})\cdots =1-x-x^{2}+x^{5}+x^{7}-x^{12}-x^{15}+x^{22}+x^{26}-\cdots
+	\end{equation}
+	The exponents $1, 2, 5, 7, 12,\ldots$ on the right hand side are called (generalized) pentagonal numbers (\href{https://oeis.org/A001318}{A001318}) and are given by the formula $g_k = k(3k - 1)/2$ for $k = 1, -1, 2, -2, 3,-3,\ldots$
+\end{thm}
+The equation (\ref{eqn:pnts}) implies a recurrence for calculating $\op{P}(n)$, the number of partitions of n:
+\begin{equation}{\label{eqn:noprf}}
+	\op{P}(n)=\op{P}(n-1)+\op{P}(n-2)-\op{P}(n-5)-\op{P}(n-7)+\cdots
+\end{equation}
+or more formally,
+\begin{equation}
+	\op{P}(n)=\sum_{k\neq 0}(-1)^{k-1}\op{P}(n-g_{k})
+\end{equation}
+\textbf{Problem Statement:}\\
+Write a function $\op{P}()$ which calculates number of partitions using equation (\ref{eqn:noprf})\\
+\begin{testcases}
+	{Arbitrary number of testcases (each space separated)\\Stop when input is negative}
+	{Number of partitions for each testcase (each on a newline)}
+	{1 2 4 8 16 32 64 128 -1}
+	{1\\2\\5\\22\\231\\8349\\1741630\\4351078600}
+\end{testcases}
+\subsection*{Crazy Video}
+\href{https://youtu.be/iJ8pnCO0nTY}{The hardest What comes next (Euler's pentagonal formula)}
+\subsection*{Exciting Puzzle}
+\href{https://youtu.be/rf6uf3jNjbo}{Towers of Hanoi: A Complete Recursive Visualization}
+\end{enumerate}
+\end{enumerate}

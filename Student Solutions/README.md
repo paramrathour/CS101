@@ -1,6 +1,6 @@
 # Student Solutions
  
-Numbering Format: <Pratice Problem number>.<Question number>
+Numbering Format: (Pratice Problem number).(Question number)
 
 Problems marked with * are acceptable but can be made more efficent
 - [1.1 Hilbert Curve by Manish](1.1%20Hilbert%20Curve%20by%20Manish.cpp)

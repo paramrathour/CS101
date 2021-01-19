@@ -1,11 +1,12 @@
 \section{Practice Problems 5 - Arrays}
 \begin{enumerate}
 \item \textbf{Horner's method} an algorithm for polynomial evaluation\\
-\begin{align}
-\op{P}(x)=a_{0}&+a_{1}x+a_{2}x^{2}+a_{3}x^{3}+\cdots +a_{n}x^{n}\\
+\begin{equation}
+\begin{aligned}
+\op{P}(x)&=a_{0}+a_{1}x+a_{2}x^{2}+a_{3}x^{3}+\cdots +a_{n}x^{n}\\
 &=a_{0}+x\bigg(a_{1}+x\Big(a_{2}+x\big(a_{3}+\cdots +x(a_{n-1}+x\,a_{n})\cdots \big)\Big)\bigg)
-\end{align}
-This allows the evaluation of a polynomial of degree $n$ with only $n$ multiplications and $n$ additions.
+\end{aligned}
+\end{equation}This allows the evaluation of a polynomial of degree $n$ with only $n$ multiplications and $n$ additions.
 This is optimal, since there are polynomials of degree $n$ that cannot be evaluated with fewer arithmetic operations
 
 \textbf{Problem Statement:}\\

@@ -1,4 +1,4 @@
-\section{Practice Problems 4 - Recursion}
+\section{Practice Problems 4 - Recursion}{\label{pp4}}
 Practice Problem 4 are inspired from the following video do watch till 6:10 to get clear understanding of recursion
 \href{https://youtu.be/ngCos392W4w}{5 Simple Steps for Solving Any Recursive Problem}
 \begin{itemize}
@@ -24,11 +24,19 @@ For $k$ pairs $(m_1,n_1),(m_2,n_2),\ldots,(m_k,n_k)$, find $\op{A}(m,n)$ for suc
 	{7\\0 0\\0 4\\1 3\\2 2\\3 4\\4 0\\4 1}
 	{1\\5\\5\\7\\125\\13\\65533}
 \end{testcases}
-\item \textbf{GridPaths}\\
+\clearpage
+\item \textbf{GridPaths}{\label{itm:gp}}\\
 Write a recursive function $\op{NumberOfGridPaths}()$ that takes two inputs $n$ and $m$ and outputs the number of unique paths from the top left corner to bottom right corner of a $n \times m$ grid.
 
 Constraints: $n,m\geq1$ and you can only move down or right 1 unit at a time.\\
 Examples given in Figure \ref{fig:gdp}\\
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{GridPaths.png}
+\caption{Number of Grid Paths for $m,n\in\{1,2,3\}$}
+\label{fig:gdp}
+\end{figure}
+\begin{comment}
 \begin{figure}[h!]
 	\centering
 	\begin{subfigure}{0.55\linewidth}
@@ -46,6 +54,7 @@ Examples given in Figure \ref{fig:gdp}\\
 	\end{subfigure}
 	\caption{}
 \end{figure}
+\end{comment}
 \textbf{Problem Statement:}\\
 For $k$ pairs $(n_1,m_1),(n_2,m_2),\ldots,(n_k,m_k)$, find $\op{NumberOfGridPaths}(n,m)$ for such $n,m$\\%\verb!NumberOfGridPaths(n,m)! for such \verb!n,m!
 \begin{testcases}
@@ -55,12 +64,18 @@ For $k$ pairs $(n_1,m_1),(n_2,m_2),\ldots,(n_k,m_k)$, find $\op{NumberOfGridPath
 	{1\\5\\6\\21\\5005\\245157}
 \end{testcases}
 Can you find efficient solution?
-\item \textbf{Delannoy Numbers}\\
+\clearpage
+\item \textbf{Delannoy Numbers}{\label{itm:dn}}\\
 Delannoy numbers describes the number of paths from the southwest corner (0, 0) of a rectangular grid to the northeast corner $(m, n)$, using only single steps north, northeast, or east.\\
 Write a recursive function  $\op{DelannoyNumber}()$ to count number of these paths
 Constraints: $n,m\geq0$\\
 Examples given in Figure \ref{fig:dela}
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.65\linewidth]{Delannoy3x3.pdf}
+	\caption{DelannoyNumber(3,3) = 63}
+	\label{fig:dela}
+\end{figure}
 \textbf{Problem Statement:}\\
 For $k$ pairs $(n_1,m_1),(n_2,m_2),\ldots,(n_k,m_k)$, find $\op{DelannoyNumbers}(n,m)$ for such $n,m$\\
 \begin{testcases}
@@ -70,7 +85,8 @@ For $k$ pairs $(n_1,m_1),(n_2,m_2),\ldots,(n_k,m_k)$, find $\op{DelannoyNumbers}
 	{3\\61\\63\\377\\433905\\245157\\62390545}
 \end{testcases}
 Can you find efficient solution?
-\item \textbf{Partitions}
+\clearpage
+\item \textbf{Partitions}{\label{itm:part}}
 \begin{enumerate}[label=(\alph*)]
 \item 
 Write a recursive function $\op{NumberOfPartitions}()$ that counts the number of ways you can partition $n$ objects using parts up to $m$
@@ -79,7 +95,7 @@ Constraints: $n,m>0$\\
 Examples given in Figure \ref{fig:part}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{Partitions.png}
+	\includegraphics[width=0.9\linewidth]{Partitions.png}
 	\caption{Partition $n$ objects using parts up to $m$}
 	\label{fig:part}
 \end{figure}

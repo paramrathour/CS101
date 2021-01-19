@@ -1,0 +1,41 @@
+\section{Practice Problems 5 - Arrays}
+\begin{enumerate}
+\item \textbf{Horner's method} an algorithm for polynomial evaluation\\
+\begin{align}
+\op{P}(x)=a_{0}&+a_{1}x+a_{2}x^{2}+a_{3}x^{3}+\cdots +a_{n}x^{n}\\
+&=a_{0}+x\bigg(a_{1}+x\Big(a_{2}+x\big(a_{3}+\cdots +x(a_{n-1}+x\,a_{n})\cdots \big)\Big)\bigg)
+\end{align}
+This allows the evaluation of a polynomial of degree $n$ with only $n$ multiplications and $n$ additions.
+This is optimal, since there are polynomials of degree $n$ that cannot be evaluated with fewer arithmetic operations
+
+\textbf{Problem Statement:}\\
+Write a function Horner() takes three inputs an array of coefficients $\op{P}$, degree of polynomial $n$ \& input $x$ and outputs the number $\op{P}(x)$ which is $\op{Horner}(\op{P},n,x)$\\
+For $k$ testcases with coefficients $P_1[\ ], P_2[\ ],\ldots,P_n[\ ]$, degree $n_1,n_2,\ldots,n_k$ and variable $x_1,x_2,\ldots,x_n$ find $P_i(x_i)$ for each $i$ in $\{1,2,\ldots,n\}$\\
+\begin{testcases}
+    {$k$ (number of testcases)\\$n_i$ (degree of polynomial) $P_i[]$ ($n_i+1$ coefficients with $i$\textsuperscript{th} index coefficient of $i$\textsuperscript{th} power)  (each testcase on a newline)}
+    {$\op{Horner}(\op{P},n,x)$ (each result on a newline)}
+    {3\\0 5 1\\1 -3 2 2\\3 2 -1 -3 4}
+    {5\\7\\80}
+\end{testcases}
+\item \textbf{Remove Duplicates}\\
+\textbf{Problem Statement:}\\
+Take an integer array as input and output all unique elements of that array (for repeated elements keep only first such occurence)\\
+\begin{testcases}
+    {$k$ (number of testcases)\\$n_i$ (size of array) followed by $n_i$ elements of array (each testcase on a newline)}
+    {Each (each result on a newline)}
+    {2\\15 1 4 9 10 18 1 4 9 16 17 6 10 11 13 17\\20 1 3 4 8 16 1 11 15 17 20 1 3 14 15 18 4 5 17 19 20}
+    {1 4 9 10 18 16 17 6 11 13\\1 3 4 8 16 11 15 17 20 14 18 5 19}
+\end{testcases}
+\clearpage
+\item \textbf{Large Factorials}\\
+Compute factorial of large numbers $n>20$
+\begin{note}
+\verb|long long int| can not store more than 20 digits. Maximum digits in testcases $=150$
+\end{note}
+\begin{testcases}
+    {$n$ (number of testcases)\\[0.2em]$k_i$ for $i = 1,2,\ldots,n$\\}
+    {$\op{factorial}(k_i)$ (each result on a newline)\\}
+    {6\\[0.3em]21 33 57 69 77 93\\}
+    {\tiny{51090942171709440000\\8683317618811886495518194401280000000\\40526919504877216755680601905432322134980384796226602145184481280000000000000\\171122452428141311372468338881272839092270544893520369393648040923257279754140647424000000000000000\\145183092028285869634070784086308284983740379224208358846781574688061991349156420080065207861248000000000000000000\\1156772507081641574759205162306240436214753229576413535186142281213246807121467315215203289516844845303838996289387078090752000000000000000000000}}
+\end{testcases}
+\end{enumerate}

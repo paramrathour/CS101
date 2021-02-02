@@ -1,6 +1,6 @@
 \section{Practice Problems 5 - Arrays}
-\begin{enumerate}
-\item \textbf{Horner's method} an algorithm for polynomial evaluation\\
+\subsection{Horner's method}
+An algorithm for polynomial evaluation\\
 \begin{equation}
 \begin{aligned}
 \op{P}(x)&=a_{0}+a_{1}x+a_{2}x^{2}+a_{3}x^{3}+\cdots +a_{n}x^{n}\\
@@ -18,7 +18,7 @@ For $k$ testcases with coefficients $P_1[\ ], P_2[\ ],\ldots,P_n[\ ]$, degree $n
     {5\\0\quad1\quad1\\1\quad2\quad-3 2\\2\quad2\quad15 -8 7\\3\quad3\quad2 -1 -3 4\\6\quad5\quad21 10 19 47 48 9 27}
     {1\\1\\27\\80\\486421}
 \end{testcases}
-\item \textbf{Large Factorials}\\
+\subsection{Large Factorials}
 \textbf{Problem Statement:}\\
 Compute factorial of large numbers $n>20$
 \begin{note}
@@ -31,16 +31,16 @@ Compute factorial of large numbers $n>20$
     {\tiny{51090942171709440000\\8683317618811886495518194401280000000\\40526919504877216755680601905432322134980384796226602145184481280000000000000\\171122452428141311372468338881272839092270544893520369393648040923257279754140647424000000000000000\\145183092028285869634070784086308284983740379224208358846781574688061991349156420080065207861248000000000000000000\\1156772507081641574759205162306240436214753229576413535186142281213246807121467315215203289516844845303838996289387078090752000000000000000000000}}
 \end{testcases}
 \clearpage
-\item \textbf{Remove Duplicates}\\
+\subsection{Remove Duplicates}
 \textbf{Problem Statement:}\\
-Take an integer array as input and output all unique elements of that array (for repeated elements keep only first such occurence)\\
+Input an integer array and output all unique elements of that array (for repeated elements keep only first occurence)\\
 \begin{testcases}
     {$k$ (number of testcases)\\$n_i$ (size of array) followed by $n_i$ elements of array (each testcase on a newline)}
     {Each result on a newline}
     {2\\15\quad1 4 9 10 18 1 4 9 16 17 6 10 11 13 17\\20\quad1 3 4 8 16 1 11 15 17 20 1 3 14 15 18 4 5 17 19 20}
     {1 4 9 10 18 16 17 6 11 13\\1 3 4 8 16 11 15 17 20 14 18 5 19}
 \end{testcases}
-\item \textbf{Maximum Element}\\
+\subsection{Maximum Element}
 \textbf{Problem Statement:}\\
 Given an array of integers which is initially increasing and then decreasing, find the maximum value in the array.\\
 A naive approach is of $\Theta(n)$ time complexity, try to think an algorithm which runs in $\Theta(\log{n})$ time (assume strictly increasing and strictly decreasing for this case)\\
@@ -50,7 +50,7 @@ A naive approach is of $\Theta(n)$ time complexity, try to think an algorithm wh
     {2\\8\quad1 4 9 10 18 17 13 11\\9\quad8 13 25 87 167 235 454 512 32}
     {18\\512}
 \end{testcases}
-\item \textbf{Majority Element}\\
+\subsection{Majority Element}
 \textbf{Problem Statement:}\\
 Write a function which takes an array and prints the majority element (if it exists), otherwise prints -1.\\
 A majority element in an array $A[ \ ]$ of size $n$ is an element that appears more than $n/2$ times\\%(and hence there is at most one such element)\\
@@ -62,7 +62,7 @@ Can you do it in $\Theta(n)$ time?\\%Moore’s Voting Algorithm
     {2\\9\quad3 3 4 2 4 4 2 4 4\\8\quad3 3 4 2 4 4 2 4}
     {4\\-1}
 \end{testcases}
-\item \textbf{Invert a Matrix}\\
+\subsection{Matrix Inversion}
 \textbf{Problem Statement:}\\
 Write a function which finds multiplicative inverse of a square matrix (if it exist) using Gaussian Elimination\\
 Each element of your output should contain exactly 2 decimal places\\
@@ -73,4 +73,3 @@ Each element of your output should contain exactly 2 decimal places\\
     {0.60 --0.70\\--0.20 0.40\\[1em]--0.43 0.50 0.36\\0.14 0.00 --0.29\\0.29 --0.50 0.93\\[1em]0.78 17.89 --5.56 11.78 5.67\\1.69 39.93 --11.70 25.35 12.61\\1.04 22.19 --6.74 14.37 7.22\\--0.19 -2.93 0.70 --1.85 --1.11\\--0.78 --14.89 4.56 --9.78 --4.67%\begin{bmatrix}0.60 &-0.70\\-0.20 &0.40\end{bmatrix}
     }
 \end{testcases}
-\end{enumerate}

@@ -8,8 +8,7 @@ Practice Problem 4 are inspired from the following video do watch till 6:10 to g
 	\item Generalize the pattern
 	\item Write code by combining recursive pattern with base case
 \end{itemize}
-\begin{enumerate}
-\item \textbf{Ackermann function}\\
+\subsection{Ackermann function}
 Write a recursive function $\op{A}()$ that takes two inputs $n$ and $m$ and outputs the number $\op{A}(m,n)$ where $\op{A}(m,n)$  is defined as
 \begin{align}
 	\op{A}(0,n)&=n+1\\
@@ -25,7 +24,7 @@ For $k$ pairs $(m_1,n_1),(m_2,n_2),\ldots,(m_k,n_k)$, find $\op{A}(m,n)$ for suc
 	{1\\5\\5\\7\\125\\13\\65533}
 \end{testcases}
 \clearpage
-\item \textbf{GridPaths}{\label{itm:gp}}\\
+\subsection{GridPaths}{\label{itm:gp}}
 Write a recursive function $\op{NumberOfGridPaths}()$ that takes two inputs $n$ and $m$ and outputs the number of unique paths from the top left corner to bottom right corner of a $n \times m$ grid.
 
 Constraints: $n,m\geq1$ and you can only move down or right 1 unit at a time.\\
@@ -65,7 +64,7 @@ For $k$ pairs $(n_1,m_1),(n_2,m_2),\ldots,(n_k,m_k)$, find $\op{NumberOfGridPath
 \end{testcases}
 Can you find efficient solution?
 \clearpage
-\item \textbf{Delannoy Numbers}{\label{itm:dn}}\\
+\subsection{Delannoy Numbers}{\label{itm:dn}}
 Delannoy numbers describes the number of paths from the southwest corner (0, 0) of a rectangular grid to the northeast corner $(m, n)$, using only single steps north, northeast, or east.\\
 Write a recursive function  $\op{DelannoyNumber}()$ to count number of these paths
 Constraints: $n,m\geq0$\\
@@ -84,9 +83,9 @@ For $k$ pairs $(n_1,m_1),(n_2,m_2),\ldots,(n_k,m_k)$, find $\op{DelannoyNumbers}
 	{6\\1 1\\2 5\\3 3\\6 3\\7 10\\17 8}
 	{3\\61\\63\\377\\433905\\245157\\62390545}
 \end{testcases}
-Can you find efficient solution?
+%Can you find efficient solution?
 \clearpage
-\item \textbf{Partitions}{\label{itm:part}}
+\subsection{Partitions}{\label{itm:part}}
 \begin{enumerate}[label=(\alph*)]
 \item 
 Write a recursive function $\op{NumberOfPartitions}()$ that counts the number of ways you can partition $n$ objects using parts up to $m$
@@ -140,5 +139,4 @@ Write a function $\op{P}()$ which calculates number of partitions using equation
 \href{https://youtu.be/iJ8pnCO0nTY}{The hardest What comes next (Euler's pentagonal formula)}
 \subsection*{Exciting Puzzle}
 \href{https://youtu.be/rf6uf3jNjbo}{Towers of Hanoi: A Complete Recursive Visualization}
-\end{enumerate}
 \end{enumerate}

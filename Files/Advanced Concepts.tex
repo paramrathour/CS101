@@ -1,4 +1,25 @@
 \section{Advanced Concepts}
+\subsection{Divide and Conquer}
+In computer science, divide and conquer is an algorithm design paradigm. A divide-and-conquer algorithm recursively breaks down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly. The solutions to the sub-problems are then combined to give a solution to the original problem.
+
+Basically 3 steps:
+\begin{itemize}
+\item Divide the problem into sub-problems that are similar to the original but smaller in size
+\item Conquer the sub-problems by solving them recursively. If they are small enough, just solve them in a straightforward manner.
+\item Combine the solutions to create a solution to the original problem
+\end{itemize}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\linewidth]{Merge Sort.pdf}
+\caption{Merge Sort}
+\end{figure}
+The divide-and-conquer technique is the basis of efficient algorithms for many problems, such as sorting (e.g., \hyperref[itm:qs]{quicksort}, merge sort), multiplying large numbers (e.g., the \href{https://en.wikipedia.org/wiki/Karatsuba_algorithm}{Karatsuba algorithm}), finding the closest pair of points, syntactic analysis (e.g., top-down parsers), and computing the discrete Fourier transform (FFT).
+
+Solve questions \ref{itm:qs},\ref{itm:pc} using divide and conquer approach
+
+\subsection*{References}
+\href{https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm}{Wikipedia}
+\clearpage
 \subsection{Dynamic Programming}
 Dynamic Programming (DP) is an algorithmic technique for solving an optimization problem by breaking it down into simpler subproblems and utilizing the fact that the optimal solution to the overall problem depends upon the optimal solution to its subproblems.\\
 \textbf{Dynamic Programming Methods}
@@ -41,7 +62,7 @@ cout<<fibonacci[n];
 \end{minted}
 \end{minipage}
 \\[0.2em]
-Solve questions \ref{itm:gp}, \ref{itm:dn}, \ref{itm:part} of practice problems \ref{pp4} and \ref{itm:cs}, \ref{itm:dw} of practice problems \ref{pp6} using dynamic programming
+Solve questions \ref{itm:gp}, \ref{itm:dn}, \ref{itm:part}, \ref{itm:cs} and \ref{itm:dw} using dynamic programming
 %\subsection*{Fun Video}
 \subsection{Greedy Algorithms}
 A greedy algorithm, as the name suggests, always makes the choice that seems to be the best at that moment. Means, it makes a locally-optimal choice in the hope that this choice will lead to a globally-optimal solution\\
@@ -51,7 +72,7 @@ Greedy algorithms to determine minimum number of coins to give while making chan
 These are the steps a human would take to emulate a greedy algorithm to represent 36 cents using only 1, 5, 10, 20 coins.
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.35\linewidth]{Greedy Algorithm Demo.pdf}
+\includegraphics[width=0.2\linewidth]{Greedy Algorithm Demo.pdf}
 \end{figure}
 The coin of the highest value, less than the remaining change owed, is the local optimum\\
 As a practice solve question \ref{itm:ef} using greedy approach\\
@@ -61,3 +82,25 @@ As a practice solve question \ref{itm:ef} using greedy approach\\
 \href{https://projecteuler.net/problem=31}{Coin sums: Project Euler}
 
 \href{https://en.wikipedia.org/wiki/Greedy_algorithm}{Greedy Algorithms: Wikipedia}
+\subsection{Backtracking}
+Backtracking is a general algorithm for finding all (or some) solutions to some computational problems, notably constraint satisfaction problems, that incrementally builds candidates to the solutions, and abandons a candidate (``backtracks'') as soon as it determines that the candidate cannot possibly be completed to a valid solution
+
+\subsubsection*{Types}
+\begin{description}
+\item[Decision Problem] search for a feasible solution
+\item[Optimization Problem] search for the best solution
+\item[Enumeration Problem] find all feasible solutions
+\end{description}
+Backtracking can be applied only for problems which admit the concept of a ``partial candidate solution'' and a relatively quick test of whether it can possibly be completed to a valid solution. It is useless, for example, for locating a given value in an unordered table. When it is applicable, however, backtracking is often much faster than brute force enumeration of all complete candidates, since it can eliminate many candidates with a single test.
+
+The classic textbook example of the use of backtracking is the eight queens puzzle, that asks for all arrangements of eight chess queens on a standard chessboard so that no queen attacks any other. In the common backtracking approach, the partial candidates are arrangements of $k$ queens in the first $k$ rows of the board, all in different rows and columns. Any partial solution that contains two mutually attacking queens can be abandoned.
+\newgame
+%\fenboard{2Q5/4Q3/1Q6/7Q/Q7/1K6/5K2/2R5 w - - 0 0}
+\fenboard{2Q5/4Q3/1Q6/7Q/Q7/6Q1/3Q4/5Q2 w - - 0 0}
+\begin{center}
+\showboard
+\end{center}
+Most of the problems, can be solved using other known algorithms like Dynamic Programming or Greedy Algorithms in logarithmic, linear, linear-logarithmic time complexity in order of input size, and therefore, outshine the backtracking algorithm in every respect (since backtracking algorithms are generally exponential in both time and space). However, a few problems still remain, that only have backtracking algorithms to solve them until now. 
+\subsection*{References}
+\href{https://en.wikipedia.org/wiki/Backtracking}{Wikipedia}\\
+\href{https://www.geeksforgeeks.org/backtracking-introduction}{Geeks for Geeks}
